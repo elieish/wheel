@@ -8,7 +8,7 @@
             <div class="row top_tiles">
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+                  <div class="icon"><i class="fa fa-money"></i></div>
                   <div class="count">179</div>
                   <h3>My Gifts</h3>
                   <p>Money received from community.</p>
@@ -16,7 +16,7 @@
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
-                  <div class="icon"><i class="fa fa-comments-o"></i></div>
+                  <div class="icon"><i class="fa fa-money"></i></div>
                   <div class="count">179</div>
                   <h3>My Donations</h3>
                   <p>Money donated to the community.</p>
@@ -46,21 +46,21 @@
                       </div>
                       <div class="tiles">
                         <div class="col-md-4 tile">
-                          <span>Total Sessions</span>
-                          <h2>231,809</h2>
+                          <span>Total Donations</span>
+                          <h2>R231,809</h2>
                           <span class="sparkline11 graph" style="height: 160px;">
                                           <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                       </span>
                         </div>
                         <div class="col-md-4 tile">
-                          <span>Total Revenue</span>
-                          <h2>$231,809</h2>
+                          <span>Total Gifts</span>
+                          <h2>R231,809</h2>
                           <span class="sparkline22 graph" style="height: 160px;">
                                           <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                       </span>
                         </div>
                         <div class="col-md-4 tile">
-                          <span>Total Sessions</span>
+                          <span>Remaining Total</span>
                           <h2>231,809</h2>
                           <span class="sparkline11 graph" style="height: 160px;">
                                           <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
@@ -73,7 +73,7 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                       <div>
                         <div class="x_title">
-                          <h2>Top Profiles</h2>
+                          <h2>Top Transactions</h2>
                           <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -98,7 +98,7 @@
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p><strong>R2300. </strong> Agent Avarage Sales </p>
                               <p> <small>12 Sales Today</small>
                               </p>
                             </div>
@@ -109,7 +109,7 @@
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p><strong>R2300. </strong> Agent Avarage Sales </p>
                               <p> <small>12 Sales Today</small>
                               </p>
                             </div>
@@ -120,7 +120,7 @@
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p><strong>R2300. </strong> Agent Avarage Sales </p>
                               <p> <small>12 Sales Today</small>
                               </p>
                             </div>
@@ -131,7 +131,7 @@
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p><strong>R2300. </strong> Agent Avarage Sales </p>
                               <p> <small>12 Sales Today</small>
                               </p>
                             </div>
@@ -142,7 +142,7 @@
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p><strong>R2300. </strong> Agent Avarage Sales </p>
                               <p> <small>12 Sales Today</small>
                               </p>
                             </div>
