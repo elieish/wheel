@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Contact;
+use App\UserRegistration;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -48,10 +50,14 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+        
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'username'      => 'required|max:255|unique:users',
+            'first_name'    => 'required|max:255',
+            'last_name'     => 'required|max:255',
+            'email'         => 'required|email|max:255|unique:users',
+            'password'      => 'required|min:6|confirmed'
+            
         ]);
     }
 
@@ -63,10 +69,47 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+
+  
+        $enums                  = \Config::get('registrationstatusesenums');
+        $pending_user_status    = $enums['users_registration_statuses']['activated'];
+
+        $user = new User();
+        $user->first_name = $data['first_name'];
+        $user->last_name  = $data['last_name'];
+        $user->username   = $data['username'];
+        $user->email      = $data['email'];
+        $user->role_id    = 3;
+        $user->password   = bcrypt($data['password']);
+        $user->user_registration_statuses_id = $pending_user_status;
+
+        $contact = new Contact();
+        $contact->primary_contact = $data['cellphone'];
+
+
+       \DB::transaction(function () use ($user, $contact,$data) {
+
+
+            $user->referred_by_id  = 1;
+            $user->sponsor_type_id = 1;
+            $user->save();
+            $contact->user_id      = $user->id;
+            $contact->save();
+
+            $user_registration                    = new UserRegistration();
+            $user_registration->sponsor_user_id   = 1;
+            $user_registration->sponsor_type_id   = 1;
+            $user_registration->sponsored_user_id = $user->id;
+            $user_registration->amount_due        = '0';
+            $user_registration->save();
+
+        
+
+        });
+
+        return $user;  
+
+
+        
     }
 }
