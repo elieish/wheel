@@ -7,6 +7,14 @@
           <div class="">
 
               <div class="row top_tiles">
+                @if(Auth::user()->user_registration_statuses_id == 2)
+
+                  <div role="alert" class="alert alert-danger alert-dismissible fade in">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
+                    </button>
+                    <strong>Account Pending Activation!!</strong> Please pay registration fees in order to activate your account
+                  </div>
+                @endif
                   <ul class="nav">
 
                       @if(Auth::user()->user_registration_statuses_id == 3)
