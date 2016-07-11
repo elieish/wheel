@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('layouts.master');
 });
 
 Route::get('signup', function () {
@@ -42,6 +42,9 @@ Route::get('add-bank',['Middleware' => 'auth','uses' => 'BankAccountsController@
 Route::post('save_bank',['Middleware' => 'auth','uses' => 'BankAccountsController@save_bank']);
 
 Route::get('delete_bank/{id}',['Middleware' => 'auth','uses' => 'BankAccountsController@delete_bank']);
+
+
+Route::get('sponsors-banking-list/{id}',['Middleware' => 'auth','uses' => 'BankAccountsController@sponsors_banking_list']);
 
 
 

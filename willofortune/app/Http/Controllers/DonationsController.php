@@ -292,15 +292,13 @@ class DonationsController extends Controller
 
 
         if ($original_donor_donation->donation_amount == $total_donor_donations) {
-
-            
+      
             $date                                 = \Carbon\Carbon::now('Africa/Johannesburg');
-            $date                                 = $date->addDay(30)->toDateString();
+            $date                                 = $date->addDay(1)->toDateString();
             $transaction_type                     = TransactionType::where('description','Pending Payout')->first();
             $transaction                          = new Transaction();
             $transaction->transaction_amount      = $donation_return;
-            $transaction->transaction_payout_date = $date;
-            
+            $transaction->transaction_payout_date = $date;  
             $transaction->transaction_type_id     = $transaction_type->id;   
             $transaction->save();
             

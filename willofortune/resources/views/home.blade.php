@@ -8,7 +8,7 @@
 
               <div class="row top_tiles">
                   <ul class="nav">
-
+                  
                       <li class="active">
                             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
@@ -204,7 +204,7 @@
                                                   <th>Contact number</th>
                                                   <th>Amount</th>                                                       
                                                   <th>Status</th>
-                                                  <th data-sorting="disabled"></th>
+                                                 
                                               </tr>
                                           </thead>
                                          
@@ -321,6 +321,50 @@
     $(".modalAmount").modal('show');
 
 }
+
+
+function launchBankModal(bank_id){
+
+                  if ($.fn.dataTable.isDataTable('#sponsors-banking-details-table')) {
+
+                     oTable.destroy();
+                  } 
+
+                  var username = "{!! \Auth::user()->username !!}";  
+
+                   
+   
+                    oTable = $('#sponsors-banking-details-table').DataTable({
+                        dom: '<"toolbar">',
+                        responsive: true,
+                        serveSide:true,
+                        autoFill: false,
+                        colReorder: true,
+                        rowReorder: true,
+                        ajax : "sponsors-banking-list/" + bank_id,
+                        columns :[
+                           
+                            {data: 'description', name: 'bank_types.description'},
+                            {data: 'account_holder', name: 'bank_accounts.account_holder'},
+                            {data: 'account_number', name: 'bank_accounts.account_number'}, 
+                            {data: 'branch_code', name: 'bank_accounts.branch_code'}, 
+                                        
+                            {data : function(data){
+
+                                return username;
+                               
+                            }
+                            },
+                            
+
+                        ]
+                    });
+
+                   
+                  
+                  $(".modalBank").modal('show');
+
+  }
 
 
  $("#submit_transaction_payout_amount").on("click",function(){
