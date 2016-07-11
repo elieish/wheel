@@ -43,9 +43,16 @@ class UsersController extends Controller
         return Datatables::of($users)
                             ->addColumn('actions','
                                                    
-                                                     <a href="add-to-payout-queue/{{ $username }}" class="btn btn-success m-r-5 m-b-5 active">
+                                                     
+                                                    <a href="add-to-payout-queue/{{ $username }}" class="btn btn-success m-r-5 m-b-5 active">
                                                         Add to Payout
                                                     </a>
+
+                                                  
+                                                    <a href="confirm-registration-fees/{{ $username }}" class="btn btn-success m-r-5 m-b-5 active">
+                                                        Confirm Registration
+                                                    </a>
+                                                    
 
 
 

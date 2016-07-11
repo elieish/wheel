@@ -107,7 +107,20 @@ Route::get('send-sms',['Middleware' => 'auth','uses' => 'UsersController@send_sm
 
 
 
+
 /*
+|--------------------------------------------------------------------------
+| Sponsors Routes
+|--------------------------------------------------------------------------
+|
+| 
+*/
+
+Route::get('sponsors-list/{user_id}',['Middleware' => 'auth','uses' => 'SponsorsController@sponsors_list']);
+
+Route::get('sponsored-list/{user_id}',['Middleware' => 'auth','uses' => 'SponsorsController@sponsored_list']);
+
+Route::get('confirm-registration-fees/{username}',['Middleware' => 'auth','uses' => 'SponsorsController@confirm_payment']);
 
 
 
