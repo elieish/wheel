@@ -46,7 +46,7 @@
                             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-globe"></i></div>
-                                <div class="count"><a href="#nav-pills-tab-1" data-toggle="tab">{{ $number_of_donations }}</a></div>
+                                <div class="count"><a href="#nav-pills-tab-9" data-toggle="tab">{{ $number_of_donations }}</a></div>
                                 <h3>All Donations</h3>
                                 <p>Community Transactions</p>
                               </div>
@@ -160,7 +160,7 @@
                             @if(\Auth::user()->role_id == 1)
 
 
-                             <div class="tab-pane fade" id="nav-pills-tab-">
+                             <div class="tab-pane fade" id="nav-pills-tab-9">
                                 <h4>Donations</h4>
 
                                  <!-- begin panel -->
