@@ -327,49 +327,49 @@
 
 
             
-                        var myForm   = $("#transaction_amount_form")[0];
-                        var formData = new FormData(myForm);
-                        var token    = $('input[name="_token"]').val();
+          var myForm   = $("#transaction_amount_form")[0];
+          var formData = new FormData(myForm);
+          var token    = $('input[name="_token"]').val();
 
 
-                          $.ajax({
-                          type    :"POST",
-                          data    : formData,
-                          contentType: false,
-                          processData: false,
-                          headers : { 'X-CSRF-Token': token },
-                          url     :"{!! url('/save_transaction_payout_amount')!!}",
-                          beforeSend : function() {
-                              
+            $.ajax({
+            type    :"POST",
+            data    : formData,
+            contentType: false,
+            processData: false,
+            headers : { 'X-CSRF-Token': token },
+            url     :"{!! url('/save_transaction_payout_amount')!!}",
+            beforeSend : function() {
+                
 
-                          },
-                          success : function(data){
-
-
-                            if (data) {
-
-                              $('#modalAmount').modal('toggle');
-                              $('#transaction_amount_form')[0].reset();
-                              location.reload();
+            },
+            success : function(data){
 
 
-                            }
+              if (data) {
+
+                $('#modalAmount').modal('toggle');
+                $('#transaction_amount_form')[0].reset();
+                location.reload();
 
 
-                          },
-                        error: function(data){
+              }
 
-                           
-                            
 
-                            alert("Wrong Amount entered");
-                           
+            },
+          error: function(data){
 
-                        }
+             
+              
 
-                      })
+              alert("Wrong Amount entered");
+             
 
-                       });
+          }
+
+        })
+
+});
 
 
 

@@ -70,7 +70,7 @@
 
                    <li>
 
-                    <a href="{{ url('home') }}"><i class="fa fa-money"></i>Add Donations</a>
+                    <a href="{{ url('donations-details') }}"><i class="fa fa-money"></i>Add Donations</a>
                   
                   </li>
                 

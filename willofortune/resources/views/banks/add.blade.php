@@ -20,7 +20,7 @@
                   <div class="x_content">
                     <br />
                     
-                       {!! Form::open(['url'=>'save_bank','method'=>'post','class'=>'form-horizontal form-label-lef']) !!}
+                       {!! Form::open(['url'=>'save_bank','method'=>'post','class'=>'form-horizontal form-label-left']) !!}
 
                       <div class="form-group">
 
