@@ -68,11 +68,15 @@
                   
                   </li>
 
+                  @if(Auth::user()->user_registration_statuses_id == 3)
+
                    <li>
 
                     <a href="{{ url('donations-details') }}"><i class="fa fa-money"></i>Add Donations</a>
                   
                   </li>
+
+                  @endif
                 
                 </ul>
               </div>

@@ -8,6 +8,8 @@
 
               <div class="row top_tiles">
                   <ul class="nav">
+
+                      @if(Auth::user()->user_registration_statuses_id == 3)
                   
                       <li class="active">
                             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -29,6 +31,8 @@
                               </div>
                             </div>
                       </li>
+
+                      @endif
                      
 
                      @if(\Auth::user()->role_id == 1 )
