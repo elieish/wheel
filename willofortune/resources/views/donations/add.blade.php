@@ -30,7 +30,7 @@
                       
                         <div class="col-md-6 col-sm-6 col-xs-12">
 
-                           {!! Form::text('donation_amount',NULL,['class' =>'form-control','id' => 'donation_amount' ]) !!}   
+                           {!! Form::text('donation_amount',NULL,['class' =>'form-control','id' => 'donation_amount' ,'placeholder' => 'From R500 to R10 000']) !!}   
                           
                         </div>
                       </div>
