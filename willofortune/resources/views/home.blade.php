@@ -143,6 +143,8 @@
                         </div>
                         @endif
 
+                        @if(Auth::user()->user_registration_statuses_id == 3)
+
                         <div class="tab-pane active in" id="nav-pills-tab-1">
                                 <h4>My Gifts</h4>
 
@@ -168,6 +170,8 @@
                                   </div>
                                   <!-- end panel -->      
                           </div>
+
+                          @endif
 
                             @if(\Auth::user()->role_id == 1)
 
@@ -200,6 +204,9 @@
 
                             @endif
 
+                        @if(Auth::user()->user_registration_statuses_id == 3)
+
+
                              <div class="tab-pane fade" id="nav-pills-tab-2">
                                 <h4>My Donations</h4>
 
@@ -224,6 +231,7 @@
                                   </div>
                                   <!-- end panel -->
                               </div>
+                          @endif
 
 
                              <!-- #modal-dialog -->
