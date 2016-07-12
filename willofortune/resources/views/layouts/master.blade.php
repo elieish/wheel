@@ -102,7 +102,7 @@
               <ul class="nav navbar-nav navbar-right">
 
              
-                 
+               
                
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -113,6 +113,8 @@
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
+
+                 <li> Email: admin@wheeloffortune.co.za | Cell:0795186699 | Cell: 072 270 8728</li>
                
 
               
@@ -128,7 +130,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-           
+               Email: admin@wheeloffortune.co.za | Cell:0795186699 | Cell: 072 270 8728
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -299,7 +301,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i>Wheel of Fortune</h1>
-                  <p>©2016 All Rights Reserved.Wheel of Fortune. Privacy and Terms</p>
+                  <p>©2016 All Rights Reserved.| admin@wheeloffortune.co.za | Cell:0795186699 | Cell :072 270 8728</p>
                 </div>
               </div>
             </form>
