@@ -1,0 +1,9 @@
+DirectoryIndex index.php
+Options -Indexes
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^wheeloffortune.co.za$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.wheeloffortune.co.za$
+RewriteCond %{REQUEST_URI} !wheel/willofortune/public/
+RewriteRule (.*) /wheel/willofortune/public/$1 [L]
