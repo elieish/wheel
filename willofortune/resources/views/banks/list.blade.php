@@ -106,7 +106,7 @@ var bank_accounts_table = function() {
 var PageDemo = function () {
 	"use strict";
 
-    var buttonVar= "<a href='add-bank' class='btn btn-inverse m-b-5'><i class='fa fa-plus fa-1x pull-left'> Add New </i></a>";
+    var buttonVar= "<a href='add-bank' class='btn btn-success m-b-5'><i class='fa fa-plus fa-1x pull-left'> Add New </i></a>";
     bank_accounts_table();
     $("div.toolbar").html(buttonVar);
 

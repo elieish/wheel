@@ -111,7 +111,7 @@ var donations_table = function() {
 var PageDemo = function () {
 	"use strict";
 
-  var buttonVar= "<a href='add-donation' class='btn btn-inverse m-b-5'><i class='fa fa-plus fa-1x pull-left'> Add New </i></a>";
+  var buttonVar= "<a href='add-donation' class='btn btn-success m-b-5'><i class='fa fa-plus fa-1x pull-left'> Add New </i></a>";
   donations_table();
 
   $("div.toolbar").html(buttonVar);
