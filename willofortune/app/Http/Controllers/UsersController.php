@@ -32,6 +32,7 @@ class UsersController extends Controller
         							 `users`.first_name,
         							 `users`.last_name,
 									 `users`.email,
+                                     `users`.created_at,
 									 `user_registration_statuses`.description,
                                      `contacts`.primary_contact
 

@@ -125,7 +125,7 @@
                                   <table id="users-table" data-order='[[0,"desc"]]' class="table-responsive table table-bordered table-hover">
                                       <thead>
                                           <tr class="inverse">
-                                             
+                                              <th>Created at</th>
                                               <th>Username</th>
                                               <th>First Name</th>
                                               <th>Surname</th>
@@ -555,6 +555,7 @@ var usersTable = function() {
             sAjaxSource : "users-list",
             columns :[
                
+                {data: 'created_at', name: 'users.created_at'},
                 {data: 'username', name: 'users.username'},
                 {data: 'first_name', name: 'users.username'},
                 {data: 'last_name', name: 'users.last_name'},
