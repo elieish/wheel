@@ -86,6 +86,7 @@ Route::get('add-donation',['Middleware' => 'cors','uses' => 'DonationsController
 Route::post('save_donation',['Middleware' => 'cors','uses' => 'DonationsController@save_donation']);
 Route::get('all-donations',['Middleware' => 'cors','uses' => 'DonationsController@all_donations']);
 Route::get('confirm-donor-payment/{id}',['Middleware' => 'cors','uses' => 'DonationsController@confirm_donor_payment']);
+Route::get('delete_donation/{id}',['Middleware' => 'auth','uses' => 'DonationsController@delete_donation']);
 
 
 /*

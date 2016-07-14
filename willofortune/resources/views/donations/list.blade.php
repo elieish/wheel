@@ -44,13 +44,10 @@
             
                             <th class="column-title">Donation Amount </th>
                             <th class="column-title">Donation Returns </th>
-                            <th class="column-title">Created Date </th>
-                          
-                          
-                            </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
+                            
+                            <th class="column-title">Action</th>
+                            
+                           
                           </tr>
                         </thead>
 

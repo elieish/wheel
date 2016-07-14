@@ -57,7 +57,7 @@ class DonationsController extends Controller
 					);
 
         return Datatables::of($donations_list)
-                            ->addColumn('actions','<a href="delete_bank/{{$id}}" class="btn btn-xs btn-alt"></a>')
+                            ->addColumn('actions','<a href="delete_donation/{{$id}}" class="btn btn-xs btn-alt">Delete</a>')
                             ->make(true);
 
 
@@ -342,6 +342,49 @@ class DonationsController extends Controller
         }
 
         return redirect('home');
+
+    }
+
+    function delete_donation($id){
+
+
+        //1.get user id 
+        //2.go donationa and get donation id and amount
+        //3.go donations allocation look all records with donation_id  get all receivers id and amounts and transaction ids  then delete records
+        //4.delete donation record
+        //5.add amount in transactions record and set transaction_type_id to 2 waiting donor allocation
+
+
+        $donation = Donation::find($id);
+
+        $donation_allocations = DonationAllocation::where('donation_id','=',$donation->id)->get();
+
+        foreach ($donation_allocations as $donation_allocation) {
+            
+            $receiver_id                      = $donation_allocation->receiver_id;
+            $donation_id                      = $donation_allocation->donation_id;
+            $transaction_id                   = $donation_allocation->transaction_id;
+            $transaction_amount               = $donation_allocation->donation_amount;
+            
+            
+            $transaction                      = Transaction::find($transaction_id);
+            $transaction->transaction_amount  = (int)$transaction->transaction_amount +  $transaction_amount;
+            $transaction->transaction_type_id = 2;
+            $transaction->save();
+
+            $donation_allocation = DonationAllocation::find($donation_allocation->id);
+            $donation_allocation->delete();
+
+        
+        }
+
+        $donation->delete();
+
+
+        return back();
+
+
+
 
     }
 
