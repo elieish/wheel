@@ -72,7 +72,7 @@
 
                    <li>
 
-                    <a href="{{ url('donations-details') }}"><i class="fa fa-money"></i>Add Donations</a>
+                    <a href="{{ url('donations-details') }}"><i class="fa fa-money"></i>Add/Delete Donations</a>
                   
                   </li>
 
