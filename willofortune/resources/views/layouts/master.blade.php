@@ -64,7 +64,7 @@
 
                   <li>
 
-                    <a href="{{ url('banking-details') }}"><i class="fa fa-money"></i>Add Banking Details</a>
+                    <a href="{{ url('banking-details') }}"><i class="fa fa-money"></i>Add?Delete Banking Details</a>
                   
                   </li>
 
