@@ -84,9 +84,9 @@
                             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-globe"></i></div>
-                                <div class="count"><a href="#nav-pills-tab-12" data-toggle="tab">10</a></div>
-                                <h3>Top 10 Transactions</h3>
-                                <p>Last  10 Community Transactions</p>
+                                <div class="count"><a href="#nav-pills-tab-12" data-toggle="tab">20</a></div>
+                                <h3>Last 20 Transactions</h3>
+                                <p>Last  20 Community Transactions</p>
                               </div>
                             </div>
                       </li>
@@ -103,7 +103,7 @@
 
                         <div class="tab-pane fade" id="nav-pills-tab-12">
                           
-                            <h4>Top 10 Transactions</h4>
+                            <h4>Last 20 Transactions</h4>
 
                              <!-- begin panel -->
                               <div class="panel pagination-inverse m-b-0 clearfix">

@@ -103,7 +103,7 @@ class TransactionsController extends Controller
                                     "
 
                             )
-                            )->limit(10)->orderBy('created_at','desc');
+                            )->limit(20)->orderBy('created_at','desc');
 
                          
 
