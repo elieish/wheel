@@ -478,7 +478,9 @@ function launchBankModal(bank_id){
 
 
 
-var user_id = "{!! \Auth::user()->id !!}"; 
+var user_id      = "{!! \Auth::user()->id !!}"; 
+var user_role_id = "{!! \Auth::user()->role_id !!}"; 
+
 
 var transactionsTable = function() {
     "use strict";
@@ -529,7 +531,7 @@ var transactionsTable = function() {
     }
 };
 
-var transactions10Table = function() {
+var transactions10Table = function(user_role_id) {
     "use strict";
 
     var token =  $('meta[name="csrf-token"]').attr('content');
@@ -556,7 +558,8 @@ var transactions10Table = function() {
 
                 {data : function(data){
 
-                    if (data.description == 'Pending Payout' && data.transaction_amount == false) {
+
+                    if (data.description == 'Pending Payout' && data.transaction_amount == false && user_role_id == 1) {
 
                        
                         return "<a  id='amountModal' class='btn btn-xs btn-block btn-success' onClick='launchAmountModal(" + data.id + ");'>Add Amount</a>";              
