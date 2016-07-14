@@ -75,6 +75,48 @@ class TransactionsController extends Controller
     }
 
 
+      public function transactions_list_10()
+    {
+
+        
+        $transactions_list = \DB::table('users_transactions')
+                            ->join('transactions','transactions.id','=','users_transactions.transaction_id')
+                            ->join('transactions_types','transactions_types.id','=','transactions.transaction_type_id')
+                            ->join('users','users.id','=','users_transactions.user_id')
+                            ->join('contacts','contacts.user_id','=','users.id')
+                            ->where('transactions.transaction_type_id','<>',5)            
+                            ->select(
+                                \DB::raw(
+                                    "
+                                     `transactions`.created_at,
+                                     `transactions`.id,
+                                     `users`.username,
+                                     `users`.first_name,
+                                     `users`.last_name,
+                                     `users`.email,
+                                     `transactions`.`transaction_amount`,
+                                     `transactions`.`transaction_payout_date`,
+                                     `users`.referred_by_id,
+                                     `contacts`.primary_contact,
+                                     `transactions_types`.description                                   
+                                   
+                                    "
+
+                            )
+                            )->limit(10);
+
+                         
+
+        return Datatables::of($transactions_list)
+                            ->addColumn('actions','
+                                                   
+                                                ')
+                            ->make(true);
+
+
+    }
+
+
     public function add_to_payout_queue($username) {
 
 

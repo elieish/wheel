@@ -63,6 +63,7 @@ Route::get('sponsors-banking-list/{id}',['Middleware' => 'auth','uses' => 'BankA
 
 Route::get('add-to-payout-queue/{username}',['Middleware' => 'cors','uses' => 'TransactionsController@add_to_payout_queue']);
 Route::get('transactions-list',['Middleware' => 'cors','uses' => 'TransactionsController@transactions_list']);
+Route::get('transactions-list-10',['Middleware' => 'cors','uses' => 'TransactionsController@transactions_list_10']);
 Route::post('save_transaction_payout_amount',['Middleware' => 'cors','uses' => 'TransactionsController@save_transaction_payout_amount']);
 Route::get('start-transaction-payout/{transaction_id}',['Middleware' => 'cors','uses' => 'TransactionsController@start_transaction_payout']);
 Route::get('gifts-list/{user_id}',['Middleware' => 'cors','uses' => 'TransactionsController@gifts_list']);

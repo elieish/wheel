@@ -76,6 +76,18 @@
                             </div>
                       </li>
 
+                       <li>
+
+                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                              <div class="tile-stats">
+                                <div class="icon"><i class="fa fa-globe"></i></div>
+                                <div class="count"><a href="#nav-pills-tab-12" data-toggle="tab">10</a></div>
+                                <h3>Top 10 Transactions</h3>
+                                <p>Last  10 Community Transactions</p>
+                              </div>
+                            </div>
+                      </li>
+
                       @endif
                     </ul>
                     
@@ -84,6 +96,34 @@
 
 
             <div class="tab-content panel">
+
+
+
+
+                        <div class="tab-pane fade" id="nav-pills-tab-12">
+                          
+                            <h4>Top 10 Transactions</h4>
+
+                             <!-- begin panel -->
+                              <div class="panel pagination-inverse m-b-0 clearfix">
+                                  <table id="transactions-table-10" data-order='[[0,"desc"]]' class="table-responsive table table-bordered table-hover">
+                                      <thead>
+                                          <tr class="inverse">
+                                             
+                                              <th>Username</th>
+                                              <th>Contact</th>
+                                              <th>Amount</th>
+                                              <th>Status</th>
+                                          
+                                           
+                                          </tr>
+                                      </thead>
+                                     
+                                  </table>
+                              </div>
+                              <!-- end panel -->
+                           
+                        </div>
                           
                          
                         @if(\Auth::user()->role_id == 1)
@@ -488,6 +528,55 @@ var transactionsTable = function() {
     }
 };
 
+var transactions10Table = function() {
+    "use strict";
+
+    var token =  $('meta[name="csrf-token"]').attr('content');
+  
+
+    if ($('#transactions-table-10').length !== 0) {
+        $('#transactions-table-10').DataTable({
+            dom: 'rfrtip',
+           
+            responsive: true,
+            autoFill: true,
+            headers: {
+                    'X-CSRF-TOKEN': token
+            },
+
+           
+            sAjaxSource : "transactions-list-10/",
+            
+            columns :[
+                {data: 'username', name: 'users.username'},
+                {data: 'primary_contact', name: 'contacts.primary_contact'},
+                
+               
+
+                {data : function(data){
+
+                    if (data.description == 'Pending Payout' && data.transaction_amount == false) {
+
+                       
+                        return "<a  id='amountModal' class='btn btn-xs btn-block btn-success' onClick='launchAmountModal(" + data.id + ");'>Add Amount</a>";              
+
+                    } else {
+
+                        return "R" + data.transaction_amount;
+
+                    }
+                   
+                }
+                },
+                {data: 'description', name: 'transaction_types.description'},
+              
+              
+
+            ]
+        });
+    }
+};
+
 
 var giftsTable = function(user_id) {
     "use strict";
@@ -671,6 +760,7 @@ var PageDemo = function () {
    donationsTable();
    transactionsTable();
    usersTable();
+   transactions10Table();
 
 
 
