@@ -107,7 +107,7 @@
 
                              <!-- begin panel -->
                               <div class="panel pagination-inverse m-b-0 clearfix">
-                                  <table id="transactions-table-10" data-order='[[0,"desc"]]' class="table-responsive table table-bordered table-hover">
+                                  <table id="transactions-table-10" class="table-responsive table table-bordered table-hover">
                                       <thead>
                                           <tr class="inverse">
                                              
