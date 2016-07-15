@@ -79,11 +79,18 @@ class TransactionsController extends Controller
     {
 
         
+        
+        
+        
+        $today_date        = \Carbon\Carbon::now('Africa/Johannesburg')->toDateString();
+
+    
         $transactions_list = \DB::table('users_transactions')
                             ->join('transactions','transactions.id','=','users_transactions.transaction_id')
                             ->join('transactions_types','transactions_types.id','=','transactions.transaction_type_id')
                             ->join('users','users.id','=','users_transactions.user_id')
                             ->join('contacts','contacts.user_id','=','users.id')
+                            ->where('transactions.transaction_payout_date','LIKE','%'.$today_date.'%')
                             ->where('transactions.transaction_type_id','<>',5)            
                             ->select(
                                 \DB::raw(
