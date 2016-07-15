@@ -103,7 +103,7 @@
 
                         <div class="tab-pane fade" id="nav-pills-tab-12">
                           
-                            <h4>Last 20 Transactions</h4>
+                            <h4>Today 10 Payout List</h4>
 
                              <!-- begin panel -->
                               <div class="panel pagination-inverse m-b-0 clearfix">
