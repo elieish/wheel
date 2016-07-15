@@ -114,7 +114,7 @@
                   </ul>
                 </li>
 
-                 <li> Email: admin@wheeloffortune.co.za | Cell:0732829243 </li>
+                 <li> Email: admin@wheeloffortune.co.za | Cell:0839968820 </li>
                
 
               
@@ -130,7 +130,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-               Email: admin@wheeloffortune.co.za | Cell:0732829243 
+               Email: admin@wheeloffortune.co.za | Cell:0839968820 
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -301,7 +301,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i>Wheel of Fortune</h1>
-                  <p>©2016 All Rights Reserved.| admin@wheeloffortune.co.za | Cell:0732829243 </p>
+                  <p>©2016 All Rights Reserved.| admin@wheeloffortune.co.za | Cell:0839968820 </p>
                 </div>
               </div>
             </form>
