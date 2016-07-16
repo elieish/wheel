@@ -174,10 +174,12 @@ class DonationsController extends Controller
                                 $transaction_amount = $transaction->transaction_amount;
                                 $user_transaction   = UserTransaction::where('transaction_id',$transaction->id)->first();
 
+
                             foreach ($donations as $donation) {
 
 
                                 if ($donation->donation_amount < $transaction_amount) {
+
 
                                         $donation_allocation                    = new DonationAllocation();
                                         $donation_allocation->donor_id          = $donation->user_id;
@@ -198,6 +200,8 @@ class DonationsController extends Controller
                                         $objDonation                             = Donation::find($donation->id);
                                         $objDonation->donation_status_id         = $donations_statuses_enums['donations_statuses']['complete']; 
                                         $objDonation->save();
+
+                                        
 
 
 
@@ -222,8 +226,8 @@ class DonationsController extends Controller
                                         $objTransaction->transaction_amount     = 0;
                                         $objTransaction->save();
 
-                                        break;
-
+                                       
+                                         break;
 
                                 }
 
@@ -348,37 +352,64 @@ class DonationsController extends Controller
     function delete_donation($id){
 
 
-        //1.get user id 
-        //2.go donationa and get donation id and amount
-        //3.go donations allocation look all records with donation_id  get all receivers id and amounts and transaction ids  then delete records
-        //4.delete donation record
-        //5.add amount in transactions record and set transaction_type_id to 2 waiting donor allocation
-
-
+       
         $donation = Donation::find($id);
 
-        $donation_allocations = DonationAllocation::where('donation_id','=',$donation->id)->get();
+        if($donation->donation_status_id == 1){
 
-        foreach ($donation_allocations as $donation_allocation) {
-            
-            $receiver_id                      = $donation_allocation->receiver_id;
-            $donation_id                      = $donation_allocation->donation_id;
-            $transaction_id                   = $donation_allocation->transaction_id;
-            $transaction_amount               = $donation_allocation->donation_amount;
-            
-            
-            $transaction                      = Transaction::find($transaction_id);
-            $transaction->transaction_amount  = (int)$transaction->transaction_amount +  $transaction_amount;
-            $transaction->transaction_type_id = 2;
-            $transaction->save();
 
-            $donation_allocation = DonationAllocation::find($donation_allocation->id);
-            $donation_allocation->delete();
+            $donation_allocations = DonationAllocation::where('donation_id','=',$donation->id)->get();
+
+            $delete_flag = TRUE;
+
+            foreach ($donation_allocations as $donation_allocation) {
+
+
+                if($donation_allocation->donation_status == 3) {
+
+                    $delete_flag = FALSE;
+                    break;
+
+                }
+         
+            
+            }
+
+            if($delete_flag) {
+
+
+                foreach ($donation_allocations as $donation_allocation) {
+
+                    $receiver_id                      = $donation_allocation->receiver_id;
+                    $donation_id                      = $donation_allocation->donation_id;
+                    $transaction_id                   = $donation_allocation->transaction_id;
+                    $transaction_amount               = $donation_allocation->donation_amount;
+                    
+                    
+                    $transaction                      = Transaction::find($transaction_id);
+                    $transaction->transaction_amount  = (int)$transaction->transaction_amount +  $transaction_amount;
+                    $transaction->transaction_type_id = 2;
+                    $transaction->save();
+
+                    $donation_allocation = DonationAllocation::find($donation_allocation->id);
+                    $donation_allocation->delete();
+
+                
+                }
+
+                 $donation->delete();
+
+
+
+
+            }
 
         
+
+
         }
 
-        $donation->delete();
+       
 
 
         return back();
