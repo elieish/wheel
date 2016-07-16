@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 use App\BankType;
+use App\User;
+
 
 use Illuminate\Support\ServiceProvider;
 
@@ -30,6 +32,15 @@ class AppServiceProvider extends ServiceProvider
 
 
             \View::share('selectBankTypes',$select_bank_types);
+
+        }
+
+        if(\Schema::hasTable('users')) {
+            
+           
+            $all_users = User::count();
+
+            \View::share('all_users',$all_users);
 
         }
     }

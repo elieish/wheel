@@ -276,7 +276,7 @@
           <section class="login_content">
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
               {{ csrf_field() }}
-              <h1>Login</h1>
+              <h1><span class="label label-success">{{ $all_users }} users registered</span></h1>
               <div>
                 <input type="text" class="form-control {{ $errors->has('email') ? 'parsley-error' : '' }}" placeholder="Email" required="" name="email"  value="{{ old('email') }}"/>
               </div>
@@ -336,8 +336,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Curiosity pays!</h1>
-                  <p>©2016 All Rights Reserved. Curiosity pays! Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> Wheel of Fortune</h1>
+                  <p>©2016 All Rights Reserved.| admin@wheeloffortune.co.za | Cell:0839968820</p>
                 </div>
               </div>
             </form>
